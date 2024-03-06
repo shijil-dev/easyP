@@ -9,8 +9,11 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-
-  <body class="bg-body-primary">
+  <body
+    class="bg-body-primary"
+    hx-headers='{"X-CSRF-Token": "<%= form_authenticity_token %>"}'
+    hx-boost="true"
+  >
     <%= yield %>
   </body>
 </html>

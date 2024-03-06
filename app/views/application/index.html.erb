@@ -1,49 +1,95 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            User
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" hx-get="/user/edit" hx-target="#main">Add User</a></li>
-            <li><a class="dropdown-item" href="#">Search</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">feature</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Group
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Add Group</a></li>
-            <li><a class="dropdown-item" href="#">Search</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">feature</a></li>
-          </ul>
-        </li>
-      </ul>
-      <button class="btn btn-outline-dark" type="submit">Logout</button>
+<main class="d-flex">
+  <div
+    class="d-flex flex-column p-2 sticky-top"
+    style="width: 260px;height:100vh;"
+  >
+    <div
+      class="text-bg-success card d-flex justify-content-end p-2 mb-3"
+      style="width: 240px;height:100px;"
+    >
+      <a href="/" class="d-flex align-items-center text-decoration-none text-white">
+        <span class="fs-4 fw-bold">// EasyPush</span>
+      </a>
     </div>
+
+    <ul class="nav flex-column mb-auto justify-content-center">
+      <li class="nav-item nav-link">
+        <a href="/" class="text-decoration-none text-dark">
+          <i class="bi bi-house-door-fill me-2" width="16" height="16"></i>
+          <strong class="">
+            Home
+          </strong>
+        </a>
+      </li>
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link text-dark"
+          href="#"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        ><i class="bi bi-person-fill me-2"></i>
+          <strong>User</strong>
+        </a>
+        <ul class="dropdown-menu">
+          <li><button class="dropdown-item" hx-get="/user/edit" hx-target="#main">Add User</button></li>
+          <li><button class="dropdown-item" hx-get="/search" hx-target="#search">Search</button></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><button class="dropdown-item" href="">feature</button></li>
+        </ul>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link text-dark"
+          href="#"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        ><i class="bi bi-people-fill me-2"></i>
+          <strong>Group</strong>
+        </a>
+        <ul class="dropdown-menu dropend">
+          <li><button class="dropdown-item">Add Group</button></li>
+          <li><button class="dropdown-item">Search</button></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><button class="dropdown-item">feature</button></li>
+        </ul>
+      </li>
+      <li>
+        <a href="/" class="nav-link text-dark" hx-get="/" hx-target="body">
+          <svg class="bi pe-none me-2" width="16" height="16"></svg>
+          feature
+        </a>
+      </li>
+
+    </ul>
+    <hr>
   </div>
-</nav>
-<main class="container-fluid bg-body" id="main">
-  <h1>LLLL</h1>
+  <div class="container mx-3 ">
+    <nav class="navbar navbar-expand-lg sticky-top">
+      <div id="search" class="container">
+
+      </div>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+        <ul class="navbar-nav">
+          <div class="navbar-item dropdown px-2">
+            <button class="btn" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-person-circle h2"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-lg-end text-small shadow">
+              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Sign out</a></li>
+            </ul>
+          </div>
+        </ul>
+      </div>
+    </nav>
+    <main class="d-flex m-3 justify-content-center" id="main">
+
+    </main>
+  </div>
+
 </main>

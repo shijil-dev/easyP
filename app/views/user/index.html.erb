@@ -1,43 +1,179 @@
-<div class="col-md-6">
+<div class="col-md-8">
   <form class="card">
-    <div class="card-body">
+    <div class="card-body row">
+
+      <div class="col-sm-6 col-md-6">
+        <div class="mb-3">
+          <label class="form-label">First Name</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="First Name"
+            value=""
+            name="user[f-name]"
+          >
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-6">
+        <div class="mb-3">
+          <label class="form-label">Last Name</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Last Name"
+            value=""
+            name="user[l-name]"
+          >
+        </div>
+      </div>
+
       <div class="mb-3">
         <label class="form-label required">Email address</label>
-        <div>
+        <input
+          type="email"
+          class="form-control"
+          aria-describedby="emailHelp"
+          placeholder="Enter email"
+          name="user[mail]"
+        >
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-sm-6 col-md-6">
+          <div class="mb-3">
+            <label class="form-label required">Password</label>
+            <div>
+              <input
+                type="password"
+                class="form-control"
+                placeholder="Password"
+                name="user[password]"
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-6">
+          <div class="mb-3">
+            <label class="form-label required">Confirm Password</label>
+            <input
+              type="password"
+              class="form-control"
+              placeholder="Password"
+              name="user[c-password]"
+            >
+          </div>
+        </div>
+        <small class="form-hint">
+          Your password must be 8-20 characters long, contain letters and
+          numbers, and must not contain spaces, special characters, or emoji.
+        </small>
+      </div>
+
+      <div class="col-sm-6 col-md-6">
+        <div class="mb-3">
+          <label for="department" class="form-label">Department</label>
           <input
-            type="email"
+            type="text"
+            id="user[department]"
             class="form-control"
-            aria-describedby="emailHelp"
-            placeholder="Enter email"
-          >
-          <small class="form-hint">We'll never share your email with anyone else.</small>
+            placeholder="Department"
+            required
+          />
         </div>
       </div>
-      <div class="mb-3">
-        <label class="form-label required">Password</label>
-        <div>
-          <input type="password" class="form-control" placeholder="Password">
-          <small class="form-hint">
-            Your password must be 8-20 characters long, contain letters and
-            numbers, and must not contain spaces, special characters, or
-            emoji.
-          </small>
+      <div class="col-sm-6 col-md-6">
+        <div class="mb-3">
+          <label for="designation" class="form-label">Designation</label>
+          <input
+            type="text"
+            name="user[designation]"
+            class="form-control"
+            placeholder="Designation"
+            required
+          />
         </div>
       </div>
-      <div class="mb-3">
-        <label class="form-label">Select</label>
-        <div>
-          <select class="form-select">
-            <option>Option 1</option>
-            <option>Option 2</option>
-            <option>Option 3</option>
-            <option>Option 4</option>
+
+      <div class="col-sm-6 col-md-6">
+        <div class="mb-3">
+          <label class="form-label">Date Of Birth</label>
+          <input type="date" name="user[dob]" class="form-control"
+            required/>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-6">
+        <div class="mb-3">
+          <label class="form-label">Date Of Join</label>
+          <input type="date" name="user[doj]" class="form-control"
+            required/>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-6">
+        <div class="mb-3">
+          <label class="form-label">Wage Group</label>
+          <input
+            type="text"
+            name="user[wagegroup]"
+            class="form-control"
+            placeholder="Wage Group"
+            required
+          />
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-6">
+        <div class="mb-3">
+          <label class="form-label">Cost Center</label>
+          <input
+            type="text"
+            name="user[costcenter]"
+            class="form-control"
+            placeholder="Cost Center"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-6">
+        <div class="mb-3">
+          <label class="form-label">EasyPush Access</label>
+          <select name="user[access]" class="form-select">
+            <option>
+              No EasyPush Access</option>
+            <option>
+              Full EasyPush Access</option>
+            <option>
+              Password change</option>
+            <option>
+              User Update</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-6">
+        <div class="mb-3">
+          <label class="form-label">Account Status</label>
+          <select name="user[status]" class="form-select">
+            <option>
+              Active</option>
+            <option>
+              Disabled</option>
           </select>
         </div>
       </div>
 
-    <div class="card-footer text-end">
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <div class="mb-3">
+        <label for="user[quota]" class="form-label">Mail Quota</label>
+        <input type="text"name="user[quota]" class="form-control"
+        placeholder="Mail Quota" required/>
+      </div>
+      <div class="card-footer text-center">
+        <button
+          type="submit"
+          class="btn btn-secondary col-2 mt-3"
+          hx-post="/user/new"
+          hx-target="#main"
+        >Submit</button>
+      </div>
     </div>
   </form>
 </div>
